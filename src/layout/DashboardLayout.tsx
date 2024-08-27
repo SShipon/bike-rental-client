@@ -38,7 +38,7 @@ const DashboardLayout = () => {
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link to={"/"} className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
-              <span className="">Bike Booker</span>
+              <span className="text-[#F43650] text-base lg:text-4xl font-extrabold">RIDEXO</span>
             </Link>
           </div>
           <div className="flex-1">

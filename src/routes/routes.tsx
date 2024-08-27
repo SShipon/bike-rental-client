@@ -4,6 +4,7 @@ import RootLayout from "@/layout/RootLayout";
 import AboutUs from "@/pages/About/About";
 import Login from "@/pages/Auth/Login";
 import Register from "@/pages/Auth/Register";
+import BikeDetailsClient from "@/pages/BikeDetailsClient/BikeDetailsClient";
 import Comparison from "@/pages/Comparision/Comparision";
 import BikeManagement from "@/pages/Dashboard/Admin/BikeManagement/BikeManagement";
 import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
@@ -14,6 +15,7 @@ import BikeDetails from "@/pages/Dashboard/Client/BikeDetails/BikeDetails";
 import Booking from "@/pages/Dashboard/Client/Booking/Booking";
 import ClientBikeManagement from "@/pages/Dashboard/Client/ClientBikeManagement/ClientBikeManagement";
 import PaymentBooking from "@/pages/Dashboard/Client/PaymentBooking/PaymentBooking";
+import DashboardHome from "@/pages/Dashboard/DashboardHome";
 import Error from "@/pages/Error/Error";
 import Home from "@/pages/Home/Home";
 import PrivateRoute from "@/private/PrivateRoute";
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/comparison",
         element: <Comparison />,
+      },
+      {
+        path: "/bike-details-client/:id",
+        element: <BikeDetailsClient />,
       },
     ],
   },
@@ -64,6 +70,10 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       // Admin Dashboard
+      {
+        index: true,
+        element: <DashboardHome />
+      },
       {
         path: "profile",
         element: <Profile />,
@@ -100,6 +110,10 @@ const router = createBrowserRouter([
       },
       {
         path: "my-rental",
+        element: <Booking />,
+      },
+      {
+        path: "my-rental-paid",
         element: <Booking />,
       },
     ],

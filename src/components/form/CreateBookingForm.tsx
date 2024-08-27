@@ -21,9 +21,7 @@ const CreateBookingForm: React.FC<CreateBikeFormProps> = ({ setOpen, id }) => {
   } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    console.log(data.startTime);
     const startTime = formatDate(data.startTime);
-    console.log(startTime);
 
     navigate(`/dashboard/payment-booking`, {
       state: { id: id, startTime: startTime, paidStatus: "initial-paid" },
@@ -39,6 +37,7 @@ const CreateBookingForm: React.FC<CreateBikeFormProps> = ({ setOpen, id }) => {
         <Input
           type="datetime-local"
           id="startTime"
+          className="dark:bg-gray-800 dark:text-gray-100"
           {...register("startTime")}
         />
         {errors.startTime && (

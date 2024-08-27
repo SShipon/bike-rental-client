@@ -11,10 +11,15 @@ import {
 import { useGetRentalsQuery } from "@/redux/features/book/bookApi";
 import { LoadingSkeleton } from "@/components/shared/LoadingSkeleton";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { TBooking } from "@/types/global";
 
 export default function Booking() {
+  const location = useLocation();
+
+  const paymentLocation = location.pathname.split("/").pop();
+
+
   const navigate = useNavigate();
   const { data: initialPaidData, isLoading: isInitialPaidLoading } =
     useGetRentalsQuery({
@@ -32,7 +37,6 @@ export default function Booking() {
     totalPrice: number,
     bookingId: string
   ) => {
-    console.log(bookingId);
     navigate(`/dashboard/payment-booking`, {
       state: { id: bikeId, totalPrice, bookingId: bookingId },
     });
@@ -41,7 +45,9 @@ export default function Booking() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-6">My Rentals</h1>
-      <Tabs defaultValue="unpaid">
+      <Tabs
+        defaultValue={paymentLocation === "my-rental-paid" ? "paid" : "unpaid"}
+      >
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="unpaid">Unpaid</TabsTrigger>
           <TabsTrigger value="paid">Paid</TabsTrigger>
@@ -103,7 +109,7 @@ export default function Booking() {
                           {paidStatus && "Pending"}
                         </span>
                       </TableCell>
-                      <TableCell>{totalCost}</TableCell>
+                      <TableCell>{totalCost} BDT</TableCell>
                       <TableCell className="flex items-center gap-2">
                         <Button
                           className="bg-green-500 px-8"

@@ -1,50 +1,15 @@
-# React + TypeScript + Vite
+## BIKE BOOKER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
+## Live URL
 ```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# Introduction
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Bike Booker is a Bike rental service. People can rent bike using this website. There are two user 1. Admin, 2. User. Admin handle to add Bikes and show that home page and other page. People can see the bike and rent this bike form this dashboard. Make sure user Pay for rent bike 100 TK first then booking bike.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Project Description
+
+Bike Booker is a bike rental service where people can rent bikes using the website. There are two types of users: Admin and User. Admins are responsible for adding bikes to the system and displaying them on the home page and other relevant pages. Users can browse the available bikes, view details, and rent them from their dashboard. To rent a bike, users must first pay a fee of 100 TK. Once the payment is made, the booking is confirmed, and users can see their rental details in their dashboard. The system ensures a smooth rental process with secure payment handling, making it easy for users to rent bikes and for admins to manage bike listings and bookings.
+

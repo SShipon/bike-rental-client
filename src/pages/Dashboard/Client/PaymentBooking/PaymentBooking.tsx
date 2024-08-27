@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Bike, Tag, IndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,16 +13,20 @@ import {
   useUpdateWithPaymentMutation,
 } from "@/redux/features/book/bookApi";
 import { toast } from "@/components/ui/use-toast";
-import { useGetAllCouponsQuery } from "@/redux/features/coupon/couponApi";
+import {
+  useGetAllCouponsQuery,
+  useGetCopyCouponQuery,
+} from "@/redux/features/coupon/couponApi";
 
 export default function PaymentBooking() {
+  const { data: copyCoupon } = useGetCopyCouponQuery(undefined);
+  console.log(copyCoupon,"Coupon code addd");
   const location = useLocation();
   const { id, startTime, paidStatus, totalPrice, bookingId } =
     location.state || {};
 
   const { data: couponData } = useGetAllCouponsQuery(undefined);
   const coupons = couponData?.data;
-  console.log(coupons);
 
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
@@ -33,6 +37,12 @@ export default function PaymentBooking() {
 
   const [updateWithPayment, { isLoading: paymentLoading }] =
     useUpdateWithPaymentMutation();
+
+  useEffect(() => {
+    if (copyCoupon?.data?.coupon) {
+      setCouponCode(copyCoupon.data.coupon);
+    }
+  }, [copyCoupon]);
 
   if (isLoading) {
     return <Loader />;
@@ -47,6 +57,9 @@ export default function PaymentBooking() {
   };
 
   const totalPrices = totalPrice - Number(discount.toFixed(0));
+
+  console.log(couponCode, "couponCode");
+  console.log(copyCoupon?.data?.coupon, "copyCoupon");
 
   const handleCouponApply = () => {
     const matchedCoupon = coupons.find(
@@ -80,14 +93,11 @@ export default function PaymentBooking() {
         });
       }
     } else {
-      console.log("test1", totalPrices);
       try {
         const res = await updateWithPayment({
           id: bookingId,
           amount: totalPrices,
         }).unwrap();
-
-        console.log(res);
 
         if (res.success) {
           toast({
@@ -106,13 +116,13 @@ export default function PaymentBooking() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
+    <div className="min-h-screen dark:bg-gray-900  p-8">
+      <div className="max-w-4xl mx-auto ">
+        <h1 className="text-4xl font-bold mb-8 text-center">
           Payment Here
         </h1>
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-white/70 backdrop-blur-lg border-none shadow-lg">
+          <Card className="bg-white/70  backdrop-blur-lg border-none shadow-lg">
             <CardContent className="p-6">
               <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
                 <img src={bikeDetails.image} alt={bikeDetails.name} />
@@ -121,12 +131,12 @@ export default function PaymentBooking() {
                 {bikeDetails.name}
               </h2>
               {!paidStatus && (
-                <div className="space-y-2 text-gray-600">
+                <div className="space-y-2 ">
                   <div className="flex items-center">
                     <Tag className="w-5 h-5 mr-2" />
                     <span>{bikeDetails.pricePerHour} BDT / hour</span>
                   </div>
-                  <div className="flex items-center text-xl font-bold text-gray-800">
+                  <div className="flex items-center text-xl font-bold">
                     <IndianRupee className="w-6 h-6 mr-2" />
                     <span>{totalPrices} BDT</span>
                   </div>
@@ -138,14 +148,16 @@ export default function PaymentBooking() {
             <CardContent className="p-6 flex flex-col justify-between h-full">
               {!paidStatus && (
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                  <h3 className="text-xl font-semibold mb-4 ">
                     Apply Coupon
                   </h3>
                   <div className="flex space-x-2 mb-6">
                     <Input
                       type="text"
                       placeholder="Enter coupon code"
-                      value={couponCode}
+                      defaultValue={
+                        copyCoupon?.data?.coupon && copyCoupon?.data?.coupon
+                      }
                       onChange={(e) => setCouponCode(e.target.value)}
                       className="bg-white/50 border-gray-300 text-gray-800 placeholder-gray-400"
                     />

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Mail } from "lucide-react";
+
 
 const teamMembers = [
   {
@@ -98,23 +98,7 @@ export default function AboutUs() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-        <Card>
-          <CardContent className="p-6 space-y-4">
-            <div className="flex items-center space-x-4">
-              <MapPin className="w-6 h-6 text-primary" />
-              <span>8200, Barishal, Bangladesh</span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Phone className="w-6 h-6 text-primary" />
-              <span>+88 (013) 075 28955</span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Mail className="w-6 h-6 text-primary" />
-              <span>souravehalder925@gmail.com</span>
-            </div>
-          </CardContent>
-        </Card>
+        
       </section>
     </div>
   );
