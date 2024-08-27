@@ -22,7 +22,7 @@ import React from "react";
 import { TBike } from "@/types/bike";
 import { useUpdateBikeMutation } from "@/redux/features/bike/bikeApi";
 
-const apiKey = "800d9ccab79ca9e964c7b1edac462750";
+const apiKey = "26fe5c13a590f91c56cb6681c9a4c645";
 
 interface CreateBikeFormProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
