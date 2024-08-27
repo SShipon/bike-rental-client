@@ -6,6 +6,7 @@ import TestimonialsSection from "./Section/TestimonialsSection";
 import WhyChooseUs from "./Section/WhyChoosUs";
 import Discount from './Section/Discount';
 
+
 const Home = () => {
   const availableBikeRef = useRef<HTMLDivElement>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -25,7 +26,7 @@ const Home = () => {
       </div>
       <TestimonialsSection />
       <WhyChooseUs />
-      < Discount/>
+       <Discount />
       <ContactUs />
     </div>
   );
