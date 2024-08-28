@@ -16,17 +16,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SkeletonCard } from "@/components/shared/LoaderCard";
 import { TBike } from "@/types/bike";
-import { useAppSelector } from "@/redux/hooks";
-import { selectCurrentUser } from "@/redux/features/auth/authSlice";
+
 
 interface AvailableBikeProps {
   searchQuery: string;
 }
 
 const AvailableBike = ({ searchQuery }: AvailableBikeProps) => {
-  const user = useAppSelector(selectCurrentUser);
-
-  const role = user ? user.role : null;
   const [currentPage] = useState(1);
   const [params] = useState<TQueryParam[]>([
     { name: "isAvailable", value: true },
@@ -42,13 +38,11 @@ const AvailableBike = ({ searchQuery }: AvailableBikeProps) => {
     { pollingInterval: 30000 }
   );
 
-  console.log(bikeData);
-
   return (
     <div className="mt-5">
       <Container>
-        <div className="my-10">
-          <h3 className="bg-[#F43650] w-32 py-2 px-2 text-md font-black uppercase text-center text-white">
+        <div >
+          <h3 className="bg-yellow-500 w-32 py-2 px-2 text-md font-black uppercase text-center text-white">
             Our Bikes
           </h3>
           <h1 className="text-4xl font-black uppercase">Available Bikes</h1>
@@ -112,8 +106,8 @@ const AvailableBike = ({ searchQuery }: AvailableBikeProps) => {
                   </CardContent>
                   <Separator />
                   <CardFooter className="flex items-center justify-end mt-4">
-                    <Button disabled={role !== "user"}>
-                      <Link to={`/dashboard/bike-details/${_id}`}>
+                    <Button>
+                      <Link to={`/bike-details-client/${_id}`}>
                         View Details
                       </Link>
                     </Button>
