@@ -20,7 +20,7 @@ import {
 
 export default function PaymentBooking() {
   const { data: copyCoupon } = useGetCopyCouponQuery(undefined);
-  console.log(copyCoupon,"Coupon code addd");
+ // console.log(copyCoupon,"Coupon code addd");
   const location = useLocation();
   const { id, startTime, paidStatus, totalPrice, bookingId } =
     location.state || {};
@@ -58,8 +58,8 @@ export default function PaymentBooking() {
 
   const totalPrices = totalPrice - Number(discount.toFixed(0));
 
-  console.log(couponCode, "couponCode");
-  console.log(copyCoupon?.data?.coupon, "copyCoupon");
+  // console.log(couponCode, "couponCode");
+  // console.log(copyCoupon?.data?.coupon, "copyCoupon");
 
   const handleCouponApply = () => {
     const matchedCoupon = coupons.find(
