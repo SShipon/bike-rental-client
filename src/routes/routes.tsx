@@ -4,8 +4,11 @@ import RootLayout from "@/layout/RootLayout";
 import AboutUs from "@/pages/About/About";
 import Login from "@/pages/Auth/Login";
 import Register from "@/pages/Auth/Register";
+import Comparison from "@/pages/Comparision/Comparision";
 import BikeManagement from "@/pages/Dashboard/Admin/BikeManagement/BikeManagement";
+import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
 import Profile from "@/pages/Dashboard/Admin/Porfile/Profile";
+import ReturnBike from "@/pages/Dashboard/Admin/ReturnBike/ReturnBike";
 import Users from "@/pages/Dashboard/Admin/Users/Users";
 import BikeDetails from "@/pages/Dashboard/Client/BikeDetails/BikeDetails";
 import Booking from "@/pages/Dashboard/Client/Booking/Booking";
@@ -28,8 +31,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutUs />
-      }
+        element: <AboutUs />,
+      },
+      {
+        path: "/comparison",
+        element: <Comparison />,
+      },
     ],
   },
   {
@@ -63,30 +70,38 @@ const router = createBrowserRouter([
       },
       {
         path: "admin-bike-management",
-        element: <BikeManagement />
+        element: <BikeManagement />,
       },
       {
         path: "users",
-        element: <Users />
+        element: <Users />,
+      },
+      {
+        path: "coupon-management",
+        element: <CouponManagement />,
+      },
+      {
+        path: "return-bike",
+        element: <ReturnBike />,
       },
 
       // Client Dashboard
       {
         path: "client-bike-management",
-        element: <ClientBikeManagement />
+        element: <ClientBikeManagement />,
       },
       {
         path: "bike-details/:id",
-        element: <BikeDetails />
+        element: <BikeDetails />,
       },
       {
         path: "payment-booking",
-        element: <PaymentBooking />
+        element: <PaymentBooking />,
       },
       {
         path: "my-rental",
-        element: <Booking />
-      }
+        element: <Booking />,
+      },
     ],
   },
 ]);

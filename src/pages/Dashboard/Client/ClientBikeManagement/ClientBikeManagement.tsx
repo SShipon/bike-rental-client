@@ -38,7 +38,11 @@ const ClientBikeManagement = () => {
     data: bikeData,
     isLoading,
     isFetching,
-  } = useGetBikesQuery([...params, { name: "page", value: currentPage }]);
+  } = useGetBikesQuery([
+    ...params,
+    { name: "page", value: currentPage },
+    { name: "isAvailable", value: true },
+  ]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -135,7 +139,7 @@ const ClientBikeManagement = () => {
           {isLoading || isFetching ? (
             <LoadingSkeleton />
           ) : bikeData?.data.length < 1 || bikeData?.data?.success === false ? (
-            <div>no data found</div>
+            <div className="text-red-500 py-5">No Bike found</div>
           ) : (
             bikeData?.data?.map(
               (
@@ -163,7 +167,7 @@ const ClientBikeManagement = () => {
                       <span>{name}</span>
                     </span>
                   </TableCell>
-                  <TableCell>{pricePerHour} $</TableCell>
+                  <TableCell>{pricePerHour} BDT</TableCell>
                   <TableCell>{cc}</TableCell>
                   <TableCell>{model}</TableCell>
                   <TableCell>{year}</TableCell>

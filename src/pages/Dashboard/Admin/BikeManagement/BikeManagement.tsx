@@ -138,7 +138,7 @@ const BikeManagement = () => {
           {isLoading || isFetching ? (
             <LoadingSkeleton />
           ) : bikeData?.data.length < 1 || bikeData?.data?.success === false ? (
-            <div>no data found</div>
+            <div className="text-red-500 py-5">No Bike found</div>
           ) : (
             bikeData?.data?.map(
               (
@@ -167,7 +167,7 @@ const BikeManagement = () => {
                       <span>{name}</span>
                     </span>
                   </TableCell>
-                  <TableCell>{pricePerHour} $</TableCell>
+                  <TableCell>{pricePerHour} BDT</TableCell>
                   <TableCell>{cc}</TableCell>
                   <TableCell>{model}</TableCell>
                   <TableCell>{year}</TableCell>

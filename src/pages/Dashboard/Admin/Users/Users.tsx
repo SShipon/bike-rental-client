@@ -39,7 +39,7 @@ import ConfirmDeleteUserModal from "@/components/modal/ConfirmDeleteUserModal";
 const Users = () => {
   const [updateRole] =
     useUpdateRoleMutation();
-  const [params, setParams] = useState<TQueryParam[]>([]);
+  const [params] = useState<TQueryParam[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const {
     data: allUsers,
@@ -92,7 +92,7 @@ const Users = () => {
           {isLoading || isFetching ? (
             <LoadingSkeleton />
           ) : allUsers?.data.length < 1 || allUsers?.data?.success === false ? (
-            <div>no data found</div>
+            <div className="text-red-500 py-5">No Users found</div>
           ) : (
             allUsers?.data?.map(
               (
@@ -104,7 +104,7 @@ const Users = () => {
                   <TableCell className="font-medium">
                     {moment(createdAt).format("MMM Do YY")}
                   </TableCell>
-                  <TableCell>{name} $</TableCell>
+                  <TableCell>{name}</TableCell>
                   <TableCell>{email}</TableCell>
                   <TableCell>{phone}</TableCell>
                   <TableCell>{address}</TableCell>
