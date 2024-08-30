@@ -54,7 +54,7 @@ const AvailableBike = ({ searchQuery }: AvailableBikeProps) => {
           <h3 className="bg-[#F43650] w-32 py-2 px-2 text-md font-black uppercase text-center text-white">
             Our Bikes
           </h3>
-          <h1 className="text-4xl font-black uppercase my-4 text-[#F43650]">Available Bikes</h1>
+          <h1 className="text-2xl font-black uppercase my-4 text-[#F43650]">Available Bikes</h1>
         </motion.div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {isLoading ? (

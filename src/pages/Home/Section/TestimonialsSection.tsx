@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
           viewport={{ once: false, amount: 0.7 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold tracking-tighter text-[#F43650] sm:text-5xl">
+          <h2 className=" font-bold tracking-tighter text-[#F43650] text-base uppercase lg:text-2xl">
             What Our Clients Say
           </h2>
           <p className="mt-4 text-muted-foreground sm:text-xl">

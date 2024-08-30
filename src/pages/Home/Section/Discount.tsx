@@ -99,7 +99,7 @@ export default function Discount() {
 
   return (
     <div className="flex flex-col items-center justify-center py-24 bg-white dark:bg-gray-900 p-4">
-       <h4 className="lg:text-5xl 2ext-1xl font-bold mb-8 lg:mb-20 text-[#F43650]">Every Bike is on offers And Discount!</h4>
+       <h4 className="text-base uppercase lg:text-2xl font-bold mb-8 lg:mb-20 text-[#F43650]">Every Bike is on offers And Discount!</h4>
           <div className="flex items-center gap-20 lg:flex-row flex-col">
              
              <div>
@@ -110,7 +110,7 @@ export default function Discount() {
               viewport={{ once: false, amount: 0.7 }}
               className="text-center md:text-left"
             >
-              <h2 className="lg:text-3xl text-base font-bold tracking-tighter ">
+              <h2 className="lg:text-2xl text-base font-semibold tracking-tighter ">
               Spin the wheel to win your discount!
               </h2>
               <p className="mt-4 text-muted-foreground sm:text-xl">

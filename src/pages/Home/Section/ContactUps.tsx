@@ -75,7 +75,7 @@ export default function ContactUs() {
           viewport={{ once: false, amount: 0.7 }}
           className="flex flex-col justify-center items-center mb-10 gap-2"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#F43650] text-center">
+          <h2 className="lg:text-2xl text-base uppercase font-bold tracking-tighter sm:text-5xl text-[#F43650] text-center">
             Contact Us
           </h2>
           <p className="max-w-2xl text-center">

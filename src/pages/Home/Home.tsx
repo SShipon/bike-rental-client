@@ -6,6 +6,8 @@ import TestimonialsSection from "./Section/TestimonialsSection";
 import WhyChooseUs from "./Section/WhyChoosUs";
 import Discount from './Section/Discount';
 import Lates from './Section/Lates';
+import PopularBrands from './Section/PopularBrands';
+
 
 
 const Home = () => {
@@ -29,6 +31,7 @@ const Home = () => {
       <WhyChooseUs />
        <Discount />
        <Lates />
+     <PopularBrands />
       <ContactUs />
 
     </div>

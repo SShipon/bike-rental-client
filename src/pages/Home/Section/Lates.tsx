@@ -52,7 +52,7 @@ const Lates = () => {
   return (
    
     <div className=" flex flex-col justify-center items-center dark:bg-gray-900 py-20">
-        <h3 className="lg:text-5xl 2ext-1xl font-bold mb-20 lg:mb-20 text-[#F43650] text-center">Lates Bikes</h3>
+        <h3 className="text-base uppercase lg:text-2xl font-bold mb-20 lg:mb-20 text-[#F43650] text-center">Lates Bikes</h3>
     <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  ">
       {products.map((product, index) => (
         <Late
