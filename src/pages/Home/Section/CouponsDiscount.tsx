@@ -31,16 +31,16 @@ const promotions = [
 ]
 
 export default function CouponsAndDiscounts() {
-  const [activeTab, setActiveTab] = useState("current")
+  const [activeTab, setActiveTab] = useState("current");
 
   const copyToClipboard = (code: string) => {
     navigator.clipboard.writeText(code).then(() => {
       toast({
         title: "Coupon code copied!",
         description: `${code} has been copied to your clipboard.`,
-      })
-    })
-  }
+      });
+    });
+  };
 
   return (
     <section className="py-20 px-4">
@@ -55,10 +55,15 @@ export default function CouponsAndDiscounts() {
           </p>
         </div>
 
-        <Tabs defaultValue="current" className="w-full max-w-3xl mx-auto">
+        <Tabs
+          defaultValue="current"
+          value={activeTab} // Bind activeTab to the Tabs component
+          onValueChange={setActiveTab} // Update activeTab when a tab is selected
+          className="w-full max-w-3xl mx-auto"
+        >
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="current" onClick={() => setActiveTab("current")}>Current Offers</TabsTrigger>
-            <TabsTrigger value="howto" onClick={() => setActiveTab("howto")}>How to Apply</TabsTrigger>
+            <TabsTrigger value="current">Current Offers</TabsTrigger>
+            <TabsTrigger value="howto">How to Apply</TabsTrigger>
           </TabsList>
           <TabsContent value="current">
             <div className="grid gap-6 mt-6">
@@ -112,5 +117,5 @@ export default function CouponsAndDiscounts() {
         </Tabs>
       </div>
     </section>
-  )
+  );
 }
