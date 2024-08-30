@@ -28,14 +28,17 @@ const Header = () => {
       <Container>
         <div className="py-6 flex items-center justify-between">
           <Link to={"/"}>
-            <img className="w-44" src={logo} alt="logo" />
+             <div className="flex justify-center items-center gap-2">
+             <img className="w-[50px]" src={logo} alt="logo" /> 
+             <span className="text-[#E20A17] text-4xl font-extrabold">RIDEXO</span>
+             </div>
           </Link>
           <div className="flex items-center gap-4">
             <NavLink
               to={"/"}
               className={({ isActive }) =>
                 `font-semibold hover:text-gray-700 transition duration-75 ${
-                  isActive ? "border-b border-yellow-500" : ""
+                  isActive ? "border-b border-[#F43650]" : ""
                 }`
               }
             >
@@ -45,7 +48,7 @@ const Header = () => {
               to={"/about"}
               className={({ isActive }) =>
                 `font-semibold hover:text-gray-700 transition duration-75 ${
-                  isActive ? "border-b border-yellow-500" : ""
+                  isActive ? "border-b border-[#F43650]" : ""
                 }`
               }
             >
@@ -55,7 +58,7 @@ const Header = () => {
               to={"/comparison"}
               className={({ isActive }) =>
                 `font-semibold hover:text-gray-700 transition duration-75 ${
-                  isActive ? "border-b border-yellow-500" : ""
+                  isActive ? "border-b border-[#F43650]" : ""
                 }`
               }
             >
