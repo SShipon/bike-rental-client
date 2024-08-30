@@ -1,104 +1,98 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-import { Link } from "react-router-dom";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaPinterestP } from "react-icons/fa";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-background border-t">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Bike Rental Service</h3>
-            <p className="text-muted-foreground">
-              Providing quality bikes for your adventures since 2010. Ride with
-              us and explore the world on two wheels.
-            </p>
+    <footer className="bg-[#0b0b0b] text-white py-20">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        {/* Logo and Description */}
+        <div>
+          <h2 className="text-3xl font-bold mb-8">RIDEXO</h2>
+          <p className="mb-16 font-light text-sm">
+            Aliquet natoque, dolorum nascetur, commodi, varius, rutrum accusamus molestias egestas. 
+            Facilisi incidunt? Intege quam consectetur magnís risus magna! Duis?Facmolitia.
+          </p>
+          <div className="flex space-x-4">
+            <a href="#" className="p-2 rounded-full border hover:bg-red-500">
+            <FaFacebookF />
+            </a>
+            <a href="#" className="p-2 rounded-full border hover:bg-red-500">
+            <FaTwitter />
+            </a>
+            <a href="#" className="p-2 rounded-full border hover:bg-red-500">
+            <FaInstagram />
+            </a>
+            <a href="#" className="p-2 rounded-full border hover:bg-red-500">
+            <FaYoutube />
+            </a>
+            <a href="#" className="p-2 rounded-full border hover:bg-red-500">
+            <FaPinterestP />
+            </a>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/privacy-policy"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/terms-of-service"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact-us"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/faq"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Connect With Us</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://facebook.com/bikerentalservice"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <span className="sr-only">Facebook</span>
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="https://instagram.com/bikerentalservice"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <span className="sr-only">Instagram</span>
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="https://twitter.com/bikerentalserv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <span className="sr-only">Twitter</span>
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a
-                href="https://youtube.com/bikerentalservice"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <span className="sr-only">YouTube</span>
-                <Youtube className="w-6 h-6" />
-              </a>
-            </div>
-            <p className="text-muted-foreground">
-              Follow us for the latest updates, promotions, and cycling tips!
-            </p>
-          </div>
+          <div className="mt-16  text-gray-200 text-sm font-light">
+        &copy; 2024 Ridexo - Bikes Rental. All rights reserved.
+      </div>
         </div>
-        <div className="mt-8 pt-8 border-t text-center text-muted-foreground">
-          <p>&copy; 2024 Bike Booker. All rights reserved.</p>
+
+        {/* Locations */}
+        <div>
+          <h3 className="text-2xl font-bold mb-8">Our Locations</h3>
+          <ul className=''>
+            <li className=" mb-6">
+              <p className="font-semibold text-sm mb-2">New York City</p>
+              <p className="font-light text-sm">908 Acado St. Elizabeth, NJ 07202</p>
+              <p className="font-light text-sm">+502-215-5674</p>
+            </li>
+            <li className=" mb-6">
+              <p className="font-semibold text-sm mb-2">Gentle Park USA</p>
+              <p className="font-light text-sm">8191 Lincoln St. Arlington, MA 02474</p>
+              <p className="font-light text-sm">+802-205-9815</p>
+            </li>
+            <li>
+              <p className="font-semibold text-sm mb-2">Times Square Avenue</p>
+              <p className="font-light text-sm">125 Manhattan, NY 10036, USA</p>
+              <p className="font-light text-sm">+812-192-4569</p>
+            </li>
+          </ul>
+        </div>
+
+        {/* About Us */}
+        <div>
+          <h3 className="text-2xl font-bold mb-8">About Us</h3>
+          <ul>
+            <li className=" mb-6"><a href="#" className="font-light text-sm">Contact Us</a></li>
+            <li className=" mb-6"><a href="#" className="font-light text-sm">Services</a></li>
+            <li className=" mb-6"><a href="#" className="font-light text-sm">Rent a Bike</a></li>
+            <li className=" mb-6"><a href="#" className="font-light text-sm">Read FAQs</a></li>
+            <li className=" mb-6"><a href="#" className="font-light text-sm">Terms & Conditions</a></li>
+            <li><a href="#" className="font-light text-sm">Our Pricing</a></li>
+          </ul>
+        </div>
+
+        {/* Newsletter */}
+        <div>
+          <h3 className="text-2xl font-bold mb-8">Newsletter</h3>
+          <p className="mb-8 font-light text-sm">Subscribe to us and you won't miss the new arrivals.</p>
+          <div className="flex">
+            <input 
+              type="email" 
+              placeholder="Your Email" 
+              className="p-2 flex-grow rounded-l border placeholder-gray-400 focus:outline-none text-sm font-light"
+            />
+            <button className="p-2 rounded-r bg-red-500 hover:bg-red-600">
+              <i className="fas fa-envelope"></i>
+            </button>
+          </div>
         </div>
       </div>
+     
     </footer>
   );
-}
+};
+
+export default Footer;
+
