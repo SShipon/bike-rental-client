@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
           backgroundImage:
-            "url('https://cdn.pixabay.com/photo/2016/11/18/21/30/bike-1836962_1280.jpg')",
+            "url('https://res.cloudinary.com/dtoo9dkbs/image/upload/v1725387618/classic35066d56d955aab0_xlwslq.jpg')",
         }}
       />
       <div className="container relative z-10 mx-auto px-4">

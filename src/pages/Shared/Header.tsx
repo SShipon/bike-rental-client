@@ -47,7 +47,7 @@ const Header = () => {
               <NavLink
                 to={"/"}
                 className={({ isActive }) =>
-                  `font-semibold text-sm lg:text-base hover:text-gray-700 transition duration-75 ${
+                  `font-semibold text-sm lg:py-0 py-4 lg:text-base hover:text-gray-700 transition duration-75 ${
                     isActive ? "border-b  border-[#F43650]" : ""
                   }`
                 }
@@ -75,7 +75,7 @@ const Header = () => {
                 Comparison
               </NavLink>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 lg:py-0 py-8">
               <ModeToggle />
               {token ? (
                 <DropdownMenu>

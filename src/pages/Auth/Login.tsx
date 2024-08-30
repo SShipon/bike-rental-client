@@ -7,7 +7,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import authImage from "../../assets/auth/loginimage.jpg";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "@/validation/authValidation";
@@ -21,6 +20,7 @@ import { useAppDispatch } from "@/redux/hooks";
 import { toast } from "@/components/ui/use-toast";
 import { verifyToken } from "@/utils/verifyToken";
 import { setUser } from "@/redux/features/auth/authSlice";
+import LoginAnimate from "./LoginAnimate";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,7 +37,6 @@ const Login = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const res = await login(data).unwrap();
 
-
     const user = verifyToken(res.token);
 
     try {
@@ -52,55 +51,55 @@ const Login = () => {
       navigate("/dashboard");
     } catch (error) {
       console.log(error);
-      toast({ title: "Something went wrong" }); 
+      toast({ title: "Something went wrong" });
     }
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
-      <div className="col-span-1 sm:hidden hidden md:hidden lg:block">
-        <img
-          src={authImage}
-          alt="auth image"
-          className="h-screen object-cover"
-        />
-      </div>
-      <div className="col-span-2 flex flex-col gap-4 items-center justify-center bg-[#DDFCF5] h-screen dark:bg-gray-900">
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 bg-white dark:bg-gray-800 p-10 rounded-md shadow-sm"
-          >
-            <SignupFormField
-              name="email"
-              label="Email"
-              placeholder="Enter your email"
-              inputType="email"
-              formControl={form.control}
-            />
-            <SignupFormField
-              name="password"
-              label="Password"
-              placeholder="Enter your password"
-              description="At least 8 characters."
-              inputType="password"
-              formControl={form.control}
-            />
-            <Button type="submit">{isLoading ? "Logging..." : "Login"}</Button>
-          </form>
-        </Form>
+    <section className="my-20">
+      <div className="flex flex-col lg:flex-row items-center justify-evenly">
+        <div>
+          <LoginAnimate />
+        </div>
+        <div>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-4 bg-white dark:bg-gray-800 p-10 rounded-md shadow-sm"
+            >
+              <SignupFormField
+                name="email"
+                label="Email"
+                placeholder="Enter your email"
+                inputType="email"
+                formControl={form.control}
+              />
+              <SignupFormField
+                name="password"
+                label="Password"
+                placeholder="Enter your password"
+                description="At least 8 characters."
+                inputType="password"
+                formControl={form.control}
+              />
+              <Button className="bg-[#F43650]" type="submit">
+                {isLoading ? "Logging..." : "Login"}
+              </Button>
+            </form>
+          </Form>
 
-        <h3 className="font-semibold">
-          If you don't have account:{" "}
-          <Link
-            className="text-green-500 hover:font-bold"
-            to={"/auth/register"}
-          >
-            Signup now
-          </Link>
-        </h3>
+          <h3 className="my-4">
+            If you don't have account:{" "}
+            <Link
+              className="text-[#F43650] font-semibold hover:font-bold"
+              to={"/auth/register"}
+            >
+              SignUp now
+            </Link>
+          </h3>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

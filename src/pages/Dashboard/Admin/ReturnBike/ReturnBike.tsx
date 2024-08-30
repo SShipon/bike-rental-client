@@ -97,8 +97,8 @@ export default function ReturnBike() {
                     <span
                       className={`${
                         paidStatus === "full-paid"
-                          ? "bg-green-500"
-                          : "bg-yellow-500"
+                          ? "bg-green-400"
+                          : "bg-yellow-400"
                       } px-4 py-2 rounded-sm`}
                     >
                       {paidStatus === "full-paid"
@@ -121,7 +121,7 @@ export default function ReturnBike() {
                   <TableCell className="flex items-center gap-2">
                     <Button
                       disabled={!!totalCost}
-                      className="bg-green-500 px-8"
+                      className="bg-[#F43650] px-8"
                       onClick={() => handleCalculate(bookingId)}
                     >
                       {calculateLoading ? "Calculate..." : "Calculate"}
