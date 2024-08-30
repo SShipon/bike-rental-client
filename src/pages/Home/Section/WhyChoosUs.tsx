@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
             <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <div className="bg-primary/10 p-3 rounded-full group-hover:bg-rose-500 group-hover:text-primary-foreground transition-colors duration-300">
                     <benefit.icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-semibold">{benefit.title}</h3>

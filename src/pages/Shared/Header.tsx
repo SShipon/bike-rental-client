@@ -96,7 +96,7 @@ const Header = () => {
                   <Button variant={"outline"}>Sing Up</Button>
                 </Link>
                 <Link to={"/auth"}>
-                  <Button>Login</Button>
+                  <Button className="bg-[#F43650] text-white">Login</Button>
                 </Link>
               </>
             )}

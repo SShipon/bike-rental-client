@@ -66,7 +66,7 @@ export default function WheelSpinComponent() {
           </p>
           <Button
             onClick={handleSpin}
-            className="mt-6 bg-gradient-to-r from-yellow-500 to-yellow-500 hover:from-yellow-600 hover:to-yellow-600 text-white px-6 py-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105"
+            className="mt-6 bg-gradient-to-r from-rose-500 to-rose-500 hover:from-rose-600 hover:to-rose-600 text-white px-6 py-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105"
             disabled={isSpinning}
           >
             {isSpinning ? (
