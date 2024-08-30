@@ -19,7 +19,7 @@ const Lates = () => {
       reviews: 752,
       rating: 4.3,
     },{
-      image: 'https://images.pexels.com/photos/1715184/pexels-photo-1715184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://bd.gaadicdn.com/processedimages/ola-electric/s1-pro/640X309/s1-pro664af02c3f229.jpg',
       title: 'Bounce Infinity E.1',
       location: 'London, UK',
       price: 60,

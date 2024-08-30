@@ -12,7 +12,7 @@ interface LateProps {
   const Late: React.FC<LateProps> = ({ image, title, location, price, reviews, rating }) =>  {
     return (
       <div className="w-96 rounded-lg shadow-lg overflow-hidden">
-        <img className="w-full h-48 object-cover" src={image} alt={title} />
+        <img className="w-full h-[100%]  lg:h-48 object-cover" src={image} alt={title} />
         <div className="p-4">
           <h2 className="text-xl font-semibold mb-2">{title}</h2>
           <p className="mb-4">{location}</p>
