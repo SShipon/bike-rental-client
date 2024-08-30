@@ -29,12 +29,12 @@ Bike rental  is a bike rental service where people can rent bikes using the webs
 - tailwindcss-animate
 
 
-## code URL
+## Code URL
 ```js
  https://github.com/SShipon/bike-rental-client.git
 ```
 
-## clone code url
+## Clone code url
 ```js
 git clone https://github.com/SShipon/bike-rental-client.git
 ```
