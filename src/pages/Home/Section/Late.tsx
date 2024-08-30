@@ -1,34 +1,52 @@
+import { Rating } from '@smastrom/react-rating'; // Import the Rating component
+import { FcLike } from "react-icons/fc";
+import '@smastrom/react-rating/style.css';
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-
+// Define the interface for the component props
 interface LateProps {
+  lates: {
     image: string;
     title: string;
     location: string;
     price: number;
     reviews: number;
     rating: number;
-  }
-
-  const Late: React.FC<LateProps> = ({ image, title, location, price, reviews, rating }) =>  {
-    return (
-      <div className="w-96 rounded-lg shadow-lg overflow-hidden">
-        <img className="w-full h-[100%]  lg:h-48 object-cover" src={image} alt={title} />
-        <div className="p-4">
-          <h2 className="text-xl font-semibold mb-2">{title}</h2>
-          <p className="mb-4">{location}</p>
-          <div className="flex justify-between items-center">
-            <div className=" text-lg font-bold">${price} <span className="text-sm font-light">/ DAY</span></div>
-            <button className="bg-red-500 text-white px-4 py-2 rounded-lg">Book Now</button>
-          </div>
-          <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
-            <p>{reviews} Reviews</p>
-            <p className="flex items-center">
-              <span className="text-yellow-500">★</span> {rating}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
   };
-  
-  export default Late;
+}
+
+export const Late: React.FC<LateProps> = ({ lates }) => {
+  const { image, title, location, price, reviews, rating } = lates;
+  return (
+    <Card className="w-[350px]">
+      <CardHeader>
+        <CardDescription><img src={image} alt="" /></CardDescription>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{location}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <CardFooter className="flex  justify-around">
+          <CardDescription>$ {price}</CardDescription>
+          
+             <div className='flex gap-1'> <FcLike />
+            <CardDescription>{reviews}</CardDescription>
+       </div>
+          <CardDescription>
+            <Rating style={{ maxWidth: 100, color: '#f59e0b' }} value={rating} />
+          </CardDescription>
+        </CardFooter>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <Button className='bg-[#F43650]'>Book Now</Button>
+      </CardFooter>
+    </Card>
+  );
+};
