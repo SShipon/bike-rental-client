@@ -36,37 +36,31 @@ const Login = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    const res = await login(data).unwrap();
-
-    const user = verifyToken(res.token);
-
     try {
-      dispatch(
-        setUser({
-          user,
-          token: res.token,
-        })
-      );
+      const res = await login(data).unwrap();
+      const user = verifyToken(res.token);
+
+      dispatch(setUser({ user, token: res.token }));
 
       toast({ title: res.message });
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      console.error(error);
       toast({ title: "Something went wrong" });
     }
   };
 
   return (
-    <section className="my-20">
-      <div className="flex flex-col lg:flex-row items-center justify-evenly">
-        <div>
+    <section className="my-8 px-4 md:px-8">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-evenly">
+        <div className="w-full max-w-md lg:max-w-lg mb-8 lg:mb-0">
           <LoginAnimate />
         </div>
-        <div>
+        <div className="w-full max-w-md lg:max-w-lg">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4 bg-white dark:bg-gray-800 p-10 rounded-md shadow-sm"
+              className="space-y-4 bg-white dark:bg-gray-800 p-6 md:p-8 rounded-md shadow-sm"
             >
               <SignupFormField
                 name="email"
@@ -83,20 +77,19 @@ const Login = () => {
                 inputType="password"
                 formControl={form.control}
               />
-              
-              <Button className="bg-[#F43650]" type="submit">
+              <Button className="bg-[#F43650] w-full" type="submit">
                 {isLoading ? "Logging..." : "Login"}
               </Button>
             </form>
           </Form>
 
-          <h3 className="my-4">
+          <h3 className="my-4 text-center">
             If you don't have an account:{" "}
             <Link
               className="text-[#F43650] font-semibold hover:font-bold"
               to={"/auth/register"}
             >
-              SignUp now
+              Sign Up now
             </Link>
           </h3>
         </div>
@@ -132,7 +125,7 @@ const SignupFormField: React.FC<AuthFormFieldProps> = ({
                 placeholder={placeholder}
                 type={showPassword && inputType === "password" ? "text" : inputType || "text"}
                 {...field}
-                className="w-96 pr-10"
+                className="w-full pr-10"
               />
               {inputType === "password" && (
                 <button

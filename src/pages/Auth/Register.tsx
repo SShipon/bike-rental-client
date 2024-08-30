@@ -63,16 +63,16 @@ const Register = () => {
   };
 
   return (
-    <section className="my-8">
-      <div className="flex flex-col lg:flex-row items-center justify-evenly">
-        <div className="w-full sm:w-[600px]">
+    <section className="my-8 px-4 md:px-8">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+        <div className="w-full max-w-md lg:max-w-lg mb-8 lg:mb-0">
           <RegisterAnimate />
         </div>
-        <div>
+        <div className="w-full max-w-md lg:max-w-lg">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4 bg-white dark:bg-gray-800 p-10 rounded-md shadow-sm"
+              className="space-y-4 bg-white dark:bg-gray-800 p-6 md:p-8 rounded-md shadow-sm"
             >
               <SignupFormField
                 name="name"
@@ -110,13 +110,13 @@ const Register = () => {
                 inputType="text"
                 formControl={form.control}
               />
-              <Button className="bg-green-500" type="submit">
-                {isLoading ? "Signing..." : "SignUp"}
+              <Button className="bg-green-500 w-full" type="submit">
+                {isLoading ? "Signing..." : "Sign Up"}
               </Button>
             </form>
           </Form>
 
-          <h3 className="my-4">
+          <h3 className="my-4 text-center">
             Already have an account?{" "}
             <Link
               className="text-[#F43650] font-semibold hover:font-bold"
@@ -159,7 +159,7 @@ const SignupFormField: React.FC<SignUpFormFieldProps> = ({
                 placeholder={placeholder}
                 type={showPassword && inputType === "password" ? "text" : inputType || "text"}
                 {...field}
-                className="w-96 pr-10"
+                className="w-full pr-10"
                 required={required}
               />
               {inputType === "password" && (

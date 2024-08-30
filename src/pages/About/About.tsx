@@ -5,26 +5,28 @@ import { AiTwotoneLike } from "react-icons/ai";
 import { MdElectricBike } from "react-icons/md";
 const teamMembers = [
   {
-    name: "Sarah Johnson",
+    name: "Risal Shahed ",
     role: "Founder & CEO",
-    bio: "Sarah founded Bike Rental Service with a passion for sustainable transportation and urban exploration. With over 15 years of experience in the cycling industry, she leads our team with vision and enthusiasm.",
+    bio: "Emma brings our story to life. Her creative marketing strategies have put Bike Rental Service on the map and continue to inspire more people to choose two wheels.",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://res.cloudinary.com/dtoo9dkbs/image/upload/v1725530890/151496680_4391904790837913_3695756710532569280_n-removebg-preview_uzhlur.png",
   },
+
   {
-    name: "Michael Chen",
+    name: "Sh Shipon",
     role: "Head of Operations",
     bio: "Michael ensures our day-to-day operations run smoothly. His background in logistics and customer service helps us deliver an exceptional experience to every rider.",
     image:
-      "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://res.cloudinary.com/dtoo9dkbs/image/upload/v1725531101/00-40m-removebg-preview_bi6jxt.png",
   },
   {
-    name: "Emma Rodriguez",
+    name: "Abdur Rahim",
     role: "Chief Marketing Officer",
-    bio: "Emma brings our story to life. Her creative marketing strategies have put Bike Rental Service on the map and continue to inspire more people to choose two wheels.",
+    bio: "Sarah founded Bike Rental Service with a passion for sustainable transportation and urban exploration. With over 15 years of experience in the cycling industry, she leads our team with vision and enthusiasm.",
     image:
-      "https://plus.unsplash.com/premium_photo-1670884441012-c5cf195c062a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://res.cloudinary.com/dtoo9dkbs/image/upload/v1725530492/454853571_1186829752647875_7483518602442643715_n-removebg-preview_cepirv.png",
   },
+  
 ];
 
 export default function AboutUs() {
