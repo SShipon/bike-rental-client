@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -20,6 +19,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSignUpMutation } from "@/redux/features/auth/authApi";
 import { toast } from "@/components/ui/use-toast";
 import RegisterAnimate from "./RegisterAnimate";
+import { Eye, EyeOff } from "lucide-react"; // Assuming you're using an icon library like Lucide
 
 const Register = () => {
   const navigate = useNavigate();
@@ -44,19 +44,20 @@ const Register = () => {
 
     try {
       const res = await signUp(userData).unwrap();
-
+    
       if (res.success) {
         toast({
           variant: "default",
           title: res.message,
         });
-
+    
         navigate("/auth");
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const err = error as { data?: { message?: string } };
       toast({
         variant: "destructive",
-        title: error?.data?.message,
+        title: err?.data?.message || "An unexpected error occurred",
       });
     }
   };
@@ -110,13 +111,13 @@ const Register = () => {
                 formControl={form.control}
               />
               <Button className="bg-green-500" type="submit">
-                {isLoading ? "Signing..." : "SingUp"}
+                {isLoading ? "Signing..." : "SignUp"}
               </Button>
             </form>
           </Form>
 
           <h3 className="my-4">
-            Already have account then:{" "}
+            Already have an account?{" "}
             <Link
               className="text-[#F43650] font-semibold hover:font-bold"
               to={"/auth"}
@@ -139,6 +140,12 @@ const SignupFormField: React.FC<SignUpFormFieldProps> = ({
   formControl,
   required,
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <FormField
       control={formControl}
@@ -147,13 +154,28 @@ const SignupFormField: React.FC<SignUpFormFieldProps> = ({
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input
-              placeholder={placeholder}
-              type={inputType || "text"}
-              {...field}
-              className="w-96"
-              required={required}
-            />
+            <div className="relative">
+              <Input
+                placeholder={placeholder}
+                type={showPassword && inputType === "password" ? "text" : inputType || "text"}
+                {...field}
+                className="w-96 pr-10"
+                required={required}
+              />
+              {inputType === "password" && (
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Eye className="h-5 w-5 text-gray-500" />
+                  )}
+                </button>
+              )}
+            </div>
           </FormControl>
           {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />

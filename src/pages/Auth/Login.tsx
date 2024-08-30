@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Form,
   FormControl,
@@ -12,7 +13,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "@/validation/authValidation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import React from "react";
 import { AuthFormFieldProps } from "@/types/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "@/redux/features/auth/authApi";
@@ -21,6 +21,7 @@ import { toast } from "@/components/ui/use-toast";
 import { verifyToken } from "@/utils/verifyToken";
 import { setUser } from "@/redux/features/auth/authSlice";
 import LoginAnimate from "./LoginAnimate";
+import { Eye, EyeOff } from "lucide-react"; // Assuming you're using an icon library like Lucide
 
 const Login = () => {
   const navigate = useNavigate();
@@ -82,6 +83,7 @@ const Login = () => {
                 inputType="password"
                 formControl={form.control}
               />
+              
               <Button className="bg-[#F43650]" type="submit">
                 {isLoading ? "Logging..." : "Login"}
               </Button>
@@ -89,7 +91,7 @@ const Login = () => {
           </Form>
 
           <h3 className="my-4">
-            If you don't have account:{" "}
+            If you don't have an account:{" "}
             <Link
               className="text-[#F43650] font-semibold hover:font-bold"
               to={"/auth/register"}
@@ -111,6 +113,12 @@ const SignupFormField: React.FC<AuthFormFieldProps> = ({
   inputType,
   formControl,
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <FormField
       control={formControl}
@@ -119,12 +127,27 @@ const SignupFormField: React.FC<AuthFormFieldProps> = ({
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input
-              placeholder={placeholder}
-              type={inputType || "text"}
-              {...field}
-              className="w-96"
-            />
+            <div className="relative">
+              <Input
+                placeholder={placeholder}
+                type={showPassword && inputType === "password" ? "text" : inputType || "text"}
+                {...field}
+                className="w-96 pr-10"
+              />
+              {inputType === "password" && (
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Eye className="h-5 w-5 text-gray-500" />
+                  )}
+                </button>
+              )}
+            </div>
           </FormControl>
           {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />
