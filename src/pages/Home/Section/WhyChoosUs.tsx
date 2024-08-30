@@ -46,8 +46,8 @@ export default function WhyChooseUs() {
       />
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
-          <Badge className="mb-4" variant="secondary">Why Choose Us</Badge>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-4">
+          <Badge className="mb-4 bg-[#F43650]" variant="secondary" >Why Choose Us</Badge>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-4 text-[#F43650]">
             Ride with Confidence
           </h2>
           <p className="text-muted-foreground sm:text-xl max-w-2xl mx-auto">

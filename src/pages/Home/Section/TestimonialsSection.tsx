@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
       />
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#F43650]">
             What Our Clients Say
           </h2>
           <p className="mt-4 text-muted-foreground sm:text-xl">

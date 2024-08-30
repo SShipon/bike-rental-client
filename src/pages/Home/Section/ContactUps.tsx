@@ -61,7 +61,7 @@ export default function ContactUs() {
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-background to-muted">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-10 text-center">Contact Us</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-10 text-center text-[#F43650]">Contact Us</h2>
         <div className="grid md:grid-cols-2 gap-10">
           <Card className="md:order-2">
             <CardHeader>

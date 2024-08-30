@@ -58,7 +58,7 @@ export default function WheelSpinComponent() {
     <div className="flex flex-col items-center justify-center py-24 bg-white dark:bg-gray-900 p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full max-w-6xl">
         <div className="text-center md:text-left">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#F43650]">
             Spin to Win Your Discount!
           </h2>
           <p className="mt-4 text-muted-foreground sm:text-xl">
