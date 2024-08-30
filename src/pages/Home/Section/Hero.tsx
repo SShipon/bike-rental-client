@@ -1,4 +1,4 @@
-import video from "@/assets/hero.mp4";
+import video from "@/assets/heros.mp4";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FieldValues, SubmitHandler } from "react-hook-form";

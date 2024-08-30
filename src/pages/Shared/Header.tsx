@@ -30,7 +30,7 @@ const Header = () => {
           <Link to={"/"}>
              <div className="flex justify-center items-center gap-2">
              <img className="w-[50px]" src={logo} alt="logo" /> 
-             <span className="text-[#E20A17] text-4xl font-extrabold">RIDEXO</span>
+             <span className="text-[#F43650] text-4xl font-extrabold">RIDEXO</span>
              </div>
           </Link>
           <div className="flex items-center gap-4">
