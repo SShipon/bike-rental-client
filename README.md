@@ -17,4 +17,13 @@ Bike rental  is a bike rental service where people can rent bikes using the webs
 - Javascript 
 - typeScript
 - redux
-- 
+- firebase
+- framer-motion
+- jwt-decode
+- lottie-react
+- lucide-react
+- react-hook-form
+- react router dom
+- redux-persist
+- tailwind css
+- tailwindcss-animate
