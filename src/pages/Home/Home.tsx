@@ -5,6 +5,7 @@ import Hero from "./Section/Hero";
 import TestimonialsSection from "./Section/TestimonialsSection";
 import WheelSpinComponent from "./Section/WheelSpinComponent";
 import WhyChooseUs from "./Section/WhyChoosUs";
+import PopularBrands from './Section/PopularBrands';
 
 const Home = () => {
   const availableBikeRef = useRef<HTMLDivElement>(null);
@@ -26,6 +27,7 @@ const Home = () => {
       <TestimonialsSection />
       <WhyChooseUs />
       <WheelSpinComponent />
+      <PopularBrands />
       <ContactUs />
     </div>
   );
