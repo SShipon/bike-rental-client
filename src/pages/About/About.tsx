@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
+import { CiLocationOn } from "react-icons/ci";
+import { AiTwotoneLike } from "react-icons/ai";
+import { MdElectricBike } from "react-icons/md";
 const teamMembers = [
   {
     name: "Sarah Johnson",
@@ -82,12 +84,22 @@ export default function AboutUs() {
               principles]. This commitment is reflected in [mention how it 
               impacts your products, services, or interactions with customers].
             </p>
-              <div className="pb-4">
-              <p>Upto Unlimited Bike Discount</p>
-            <p>78K YouTube, Facebook Streaming</p>
-            <p>Lag Free, Low Latency Bike all Bangladesh</p>
+            
+              <div className="flex gap-2 items-center mb-2">
+              <CiLocationOn className="text-[#F43650]"/>
+              <p> Upto Unlimited Bike Discount</p>
               </div>
-            <Button className="bg-rose-600 hover:bg-rose-500">Explore more</Button>
+              <div className="flex gap-2 items-center mb-2">
+              <AiTwotoneLike className="text-[#F43650]" />
+              <p>78K YouTube, Facebook Streaming</p>
+              </div>
+             <div className="flex gap-2 items-center ">
+             <MdElectricBike className="text-[#F43650]" />
+             <p>Lag Free, Low Latency Bike all Bangladesh</p>
+             </div>
+           <div className="my-4">
+           <Button className="bg-rose-600 hover:bg-rose-500">Explore more</Button>
+           </div>
           </div>
           <div>
            <img className="lg:w-[3000px] w-[100%]" src="https://images.ctfassets.net/uyc32o2uod42/3nhIREpkcft8Q1Chu7AxdA/6abcac6118ce1e776ef7475bed2536cb/OSTROVAM_Home_Inset_Hero.jpg?w=1400&h=770&fm=avif" alt="" />
