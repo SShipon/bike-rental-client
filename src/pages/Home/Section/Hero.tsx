@@ -33,7 +33,7 @@ const Hero = ({ onSearch }: HeroProps) => {
         <p className="text-xl sm:text-2xl mb-8">
           Rent a bike and discover the beauty of urban cycling
         </p>
-        <div className="border p-4 rounded-lg shadow-lg max-w-md sm:max-w-2xl lg:max-w-3xl flex items-center justify-center mx-auto gap-5">
+        <div className="border border-rose-700 p-4 rounded-lg shadow-lg max-w-md sm:max-w-2xl lg:max-w-3xl flex items-center justify-center mx-auto gap-5">
           <Button size="lg" className="bg-[#F43650] ">
             Start Your Adventure
           </Button>
