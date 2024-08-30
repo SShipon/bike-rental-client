@@ -11,7 +11,7 @@ const Footer = () => {
         
         {/* Logo and Description */}
         <div>
-          <h2 className="text-3xl font-bold mb-8">RIDEXO</h2>
+          <h2 className="text-3xl font-bold mb-8 text-[#F43650]">RIDEXO</h2>
           <p className="mb-16 font-light text-sm">
             Aliquet natoque, dolorum nascetur, commodi, varius, rutrum accusamus molestias egestas. 
             Facilisi incidunt? Intege quam consectetur magnís risus magna! Duis?Facmolitia.
@@ -43,12 +43,12 @@ const Footer = () => {
           <h3 className="text-2xl font-bold mb-8">Our Locations</h3>
           <ul className=''>
             <li className=" mb-6">
-              <p className="font-semibold text-sm mb-2">New York City</p>
+              <p className="font-semibold text-sm mb-2">Dhaka City</p>
               <p className="font-light text-sm">908 Acado St. Elizabeth, NJ 07202</p>
               <p className="font-light text-sm">+502-215-5674</p>
             </li>
             <li className=" mb-6">
-              <p className="font-semibold text-sm mb-2">Gentle Park USA</p>
+              <p className="font-semibold text-sm mb-2">Gentle Park Bangladesh</p>
               <p className="font-light text-sm">8191 Lincoln St. Arlington, MA 02474</p>
               <p className="font-light text-sm">+802-205-9815</p>
             </li>
@@ -61,18 +61,29 @@ const Footer = () => {
         </div>
 
         {/* About Us */}
-        <div>
-          <h3 className="text-2xl font-bold mb-8">About Us</h3>
-          <ul>
-            <li className=" mb-6"><a href="#" className="font-light text-sm">Contact Us</a></li>
-            <li className=" mb-6"><a href="#" className="font-light text-sm">Services</a></li>
-            <li className=" mb-6"><a href="#" className="font-light text-sm">Rent a Bike</a></li>
-            <li className=" mb-6"><a href="#" className="font-light text-sm">Read FAQs</a></li>
-            <li className=" mb-6"><a href="#" className="font-light text-sm">Terms & Conditions</a></li>
-            <li><a href="#" className="font-light text-sm">Our Pricing</a></li>
-          </ul>
-        </div>
-
+       <div>
+  <h3 className="text-2xl font-bold mb-8">About Us</h3>
+  <ul>
+    <li className="mb-6">
+      <a href="#" className="font-light text-sm hover:underline hover:underline-offset-2 hover:text-rose-600 transition-colors duration-300">Contact Us</a>
+    </li>
+    <li className="mb-6">
+      <a href="#" className="font-light text-sm hover:underline hover:underline-offset-2 hover:text-rose-600 transition-colors duration-300">Services</a>
+    </li>
+    <li className="mb-6">
+      <a href="#" className="font-light text-sm hover:underline hover:underline-offset-2 hover:text-rose-600 transition-colors duration-300">Rent a Bike</a>
+    </li>
+    <li className="mb-6">
+      <a href="#" className="font-light text-sm hover:underline hover:underline-offset-2 hover:text-rose-600 transition-colors duration-300">Read FAQs</a>
+    </li>
+    <li className="mb-6">
+      <a href="#" className="font-light text-sm hover:underline hover:underline-offset-2 hover:text-rose-600 transition-colors duration-300">Terms & Conditions</a>
+    </li>
+    <li>
+      <a href="#" className="font-light text-sm hover:underline hover:underline-offset-2 hover:text-rose-600 transition-colors duration-300">Our Pricing</a>
+    </li>
+  </ul>
+</div>
         {/* Newsletter */}
         <div>
           <h3 className="text-2xl font-bold mb-8">Newsletter</h3>
