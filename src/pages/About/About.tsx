@@ -1,6 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-
 
 const teamMembers = [
   {
@@ -23,14 +21,7 @@ const teamMembers = [
   },
 ];
 
-const milestones = [
-  { year: 2010, event: "Bike Rental Service founded with a fleet of 50 bikes" },
-  { year: 2013, event: "Expanded to 5 locations across the city" },
-  { year: 2015, event: "Introduced electric bikes to our fleet" },
-  { year: 2018, event: "Launched our mobile app for easy bookings" },
-  { year: 2022, event: "Reached 1 million rides milestone" },
-  { year: 2024, event: "Expanded to 10 cities nationwide" },
-];
+
 
 export default function AboutUs() {
   return (
@@ -79,27 +70,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4">Our Journey</h2>
-        <Card>
-          <CardContent className="p-6">
-            <ul className="space-y-4">
-              {milestones.map((milestone, index) => (
-                <li key={index} className="flex items-center space-x-4">
-                  <Badge variant="outline" className="text-lg py-1 px-3">
-                    {milestone.year}
-                  </Badge>
-                  <span>{milestone.event}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      </section>
-
-      <section>
-        
-      </section>
+     
     </div>
   );
 }
