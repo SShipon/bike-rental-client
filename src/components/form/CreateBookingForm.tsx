@@ -37,7 +37,7 @@ const CreateBookingForm: React.FC<CreateBikeFormProps> = ({ setOpen, id }) => {
         <Input
           type="datetime-local"
           id="startTime"
-          className="dark:bg-gray-800 dark:text-gray-100"
+          className="dark:bg-gray-900 dark:text-gray-100"
           {...register("startTime")}
         />
         {errors.startTime && (

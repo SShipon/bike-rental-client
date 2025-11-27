@@ -127,7 +127,7 @@ export default function PaymentBooking() {
               <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
                 <img src={bikeDetails.image} alt={bikeDetails.name} />
               </div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+              <h2 className="text-2xl font-semibold mb-4 text-gray-900">
                 {bikeDetails.name}
               </h2>
               {!paidStatus && (
@@ -159,7 +159,7 @@ export default function PaymentBooking() {
                         copyCoupon?.data?.coupon && copyCoupon?.data?.coupon
                       }
                       onChange={(e) => setCouponCode(e.target.value)}
-                      className="bg-white/50 border-gray-300 text-gray-800 placeholder-gray-400"
+                      className="bg-white/50 border-gray-300 text-gray-900 placeholder-gray-400"
                     />
                     <Button onClick={handleCouponApply} variant="outline">
                       Apply
@@ -175,7 +175,7 @@ export default function PaymentBooking() {
               <div>
                 <Button
                   onClick={handlePayment}
-                  className="w-full bg-gray-800 hover:bg-gray-700 text-white"
+                  className="w-full bg-gray-900 hover:bg-gray-700 text-white"
                   size="lg"
                 >
                   <Bike className="w-5 h-5 mr-2" />
