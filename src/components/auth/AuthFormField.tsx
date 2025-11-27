@@ -33,7 +33,9 @@ const AuthFormField: React.FC<Props> = ({
 
   return (
     <FormField
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       control={formControl as any}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       name={name as any}
       render={({ field }) => (
         <FormItem>
@@ -47,7 +49,7 @@ const AuthFormField: React.FC<Props> = ({
                 }
                 {...field}
                 className="w-full pr-10"
-                // @ts-expect-error pass-through optional prop
+               
                 required={required}
               />
               {inputType === "password" && (
